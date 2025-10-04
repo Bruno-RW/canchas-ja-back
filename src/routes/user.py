@@ -7,30 +7,13 @@ from data import mockUsers as users, mockProducts as products
 
 router = APIRouter()
 
+# ? === === === STATIC ROUTES === === === ?#
 @router.get("/", response_model=List[User])
 def get_users():
     return users
 
-@router.get("/{user_id}", response_model=User)
-def get_user(user_id: int):
-    user = next(
-        (
-            user 
-            for user 
-            in users 
-            if user["id"] == user_id
-        ),
-        None
-    )
-    
-    if not user:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="User does not exist"
-        )
-    
-    return user
 
+# ? === === === DYNAMIC ROUTES === === === ?#
 @router.get("/{user_id}/favorite", response_model=List[Product])
 def get_user_favorite(user_id: int):
     user = next(
@@ -51,3 +34,23 @@ def get_user_favorite(user_id: int):
     ]
 
     return favorite_products
+
+@router.get("/{user_id}", response_model=User)
+def get_user(user_id: int):
+    user = next(
+        (
+            user 
+            for user 
+            in users 
+            if user["id"] == user_id
+        ),
+        None
+    )
+    
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="User does not exist"
+        )
+    
+    return user
