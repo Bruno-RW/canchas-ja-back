@@ -15,25 +15,25 @@ def get_products():
         in products
     ]
 
-@router.get("/{product_id}", response_model=Product)
-def get_product(product_id: str):
-    product = next(
-        (
-            Product(**product)
-            for product
-            in products 
-            if product["id"] == product_id
-        ), 
-        None
-    )
+# @router.get("/{product_id}", response_model=Product)
+# def get_product(product_id: str):
+#     product = next(
+#         (
+#             Product(**product)
+#             for product
+#             in products 
+#             if product["id"] == product_id
+#         ), 
+#         None
+#     )
 
-    if not product:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="No product found"
-        )
+#     if not product:
+#         raise HTTPException(
+#             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+#             detail="No product found"
+#         )
     
-    return product
+#     return product
 
 @router.get("/special_discount", response_model=List[Product])
 def get_special_discount():

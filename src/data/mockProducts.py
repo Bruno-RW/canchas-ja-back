@@ -20,7 +20,7 @@ mockProducts = [
   {
     "id": 1,
     "images": getRandomImage(images),
-    "location": "Porto Alegre, RS",
+    "location": "Horizontina, RS",
     "address": "Rua Placeholder, 101",
     "dateRange": "Out 22 - 24",
     "price": 60,
@@ -87,7 +87,7 @@ mockProducts = [
     "dateRange": "Nov 08 - 10",
     "price": 75,
     "rating": 4.88,
-    "discount": 15,
+    "discount": 75,
     "currency": "R$",
   },
   {
@@ -144,12 +144,12 @@ mockProducts = [
   {
     "id": 13,
     "images": getRandomImage(images),
-    "location": "Erechim, RS",
+    "location": "Horizontina, RS",
     "address": "Linha 15, Interior",
     "dateRange": "Nov 26 - 28",
     "price": 40,
     "rating": 4.6,
-    "discount": 20,
+    "discount": 60,
     "currency": "R$",
   },
   {
