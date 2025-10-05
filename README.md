@@ -2,7 +2,7 @@
     py -m venv .venv
 
 2:
-    .\.venv\Scripts\activate
+    .\\.venv\Scripts\activate
 
 3:
     pip install -r requirements.txt
