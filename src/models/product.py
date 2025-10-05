@@ -4,10 +4,19 @@ from pydantic import BaseModel
 class Product(BaseModel):
     id: int
     images: List[str]
+
+    details: str
+    description: str
+
     location: str
     address: str
+
     dateRange: str
     price: float
-    rating: float
+
     currency: str
-    discount: float | None = None
+    discountPercentage: float | None = None
+    discountDuration: float | None = None
+
+    rating: float
+    reviews: int

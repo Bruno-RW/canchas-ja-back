@@ -22,7 +22,7 @@ def get_special_discount():
         Product(**product)
         for product
         in products
-        if product.get("discount", 0) >= 50
+        if product.get("discountPercentage", 0) >= 50
     ]
 
     if not discount_products:
