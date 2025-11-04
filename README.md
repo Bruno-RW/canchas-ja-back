@@ -1,7 +1,7 @@
 # Tech Stack:
 - Python
 - FastAPI
-- Mocked data inside ./src./data
+- Uvicorn
 
 # Run commands: 
 - ``` py -m venv .venv ```
